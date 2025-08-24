@@ -1,102 +1,422 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UBETCLUB VIP Bonus - Agustus 2025</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBETCLUB VIP Bonus - Agustus 2025</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Global Reset & Font */
+        * { 
+            margin:0; 
+            padding:0; 
+            box-sizing:border-box; 
+            font-family:'Montserrat', sans-serif; 
+        }
+        
+        body { 
+            background: linear-gradient(rgba(10, 27, 43, 0.85), rgba(10, 27, 43, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230a1b2b"/><path d="M0 0L100 100" stroke="%23003b7a" stroke-width="1"/><path d="M100 0L0 100" stroke="%23003b7a" stroke-width="1"/></svg>');
+            color:#fff; 
+            overflow-x:hidden; 
+            position:relative; 
+            min-height:100vh;
+            background-attachment: fixed;
+        }
+        
+        /* Lightning & Particle Background */
+        .lightning-container { 
+            position:fixed; 
+            top:0; 
+            left:0; 
+            width:100%; 
+            height:100%; 
+            pointer-events:none; 
+            z-index:-1; 
+            overflow:hidden; 
+        }
+        
+        .lightning { 
+            position:absolute; 
+            width:2px; 
+            height:100%; 
+            background:linear-gradient(to bottom, transparent, #00f7ff, transparent); 
+            opacity:0; 
+            filter:blur(1px); 
+        }
+        
+        .lightning-1 { 
+            left:10%; 
+            animation:lightning-flash 8s infinite; 
+        }
+        
+        .lightning-2 { 
+            left:50%; 
+            animation:lightning-flash 12s infinite 2s; 
+        }
+        
+        .lightning-3 { 
+            left:85%; 
+            animation:lightning-flash 10s infinite 4s; 
+        }
+        
+        @keyframes lightning-flash {
+            0%,95%,100%{opacity:0;height:0;}
+            5%,10%{opacity:0.7;height:100%;}
+            15%,90%{opacity:0;height:100%;}
+        }
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        .particles { 
+            position:fixed; 
+            top:0; 
+            left:0; 
+            width:100%; 
+            height:100%; 
+            pointer-events:none; 
+            z-index:-2; 
+        }
+        
+        .particle { 
+            position:absolute; 
+            border-radius:50%; 
+            background:rgba(0, 247, 255, 0.15); 
+            animation:float 20s infinite linear; 
+        }
+        
+        @keyframes float { 
+            0%{transform:translateY(0) rotate(0deg); opacity:1;} 
+            100%{transform:translateY(-100vh) rotate(720deg); opacity:0;} 
+        }
 
-<style>
-/* Global Reset & Font */
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
-body { background:#0a1b2b; color:#fff; overflow-x:hidden; position:relative; min-height:100vh; }
+        /* Container & Card */
+        .container { 
+            max-width:700px; 
+            margin:30px auto; 
+            background:rgba(0, 15, 35, 0.85); 
+            border-radius:20px; 
+            padding:35px; 
+            box-shadow:0 15px 40px rgba(0,0,0,0.6); 
+            backdrop-filter:blur(15px); 
+            border:1px solid rgba(0, 180, 255, 0.4); 
+            position:relative; 
+            overflow:hidden; 
+            z-index:1; 
+        }
+        
+        .container::before { 
+            content:''; 
+            position:absolute; 
+            top:-50%; 
+            left:-50%; 
+            width:200%; 
+            height:200%; 
+            background:radial-gradient(circle, rgba(0, 150, 255, 0.15) 0%, transparent 70%); 
+            animation:rotate 40s linear infinite; 
+            z-index:-1; 
+        }
+        
+        @keyframes rotate { 
+            0%{transform:rotate(0deg);} 
+            100%{transform:rotate(360deg);} 
+        }
 
-/* Lightning & Particle Background */
-.lightning-container { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:-1; overflow:hidden; }
-.lightning { position:absolute; width:2px; height:100%; background:linear-gradient(to bottom, transparent, #00f, transparent); opacity:0; filter:blur(1px); }
-.lightning-1 { left:10%; animation:lightning-flash 8s infinite; }
-.lightning-2 { left:50%; animation:lightning-flash 12s infinite 2s; }
-.lightning-3 { left:85%; animation:lightning-flash 10s infinite 4s; }
-@keyframes lightning-flash {
-  0%,95%,100%{opacity:0;height:0;}
-  5%,10%{opacity:0.5;height:100%;}
-  15%,90%{opacity:0;height:100%;}
-}
+        /* Header */
+        header { 
+            text-align:center; 
+            margin-bottom:30px; 
+            padding-bottom:20px; 
+            border-bottom:2px solid #00f7ff; 
+            position:relative; 
+        }
+        
+        .logo { 
+            font-size:2.8rem; 
+            font-weight:800; 
+            color: #00f7ff;
+            letter-spacing:2px; 
+            display:inline-block; 
+            text-shadow:0 0 20px rgba(0, 247, 255, 0.7);
+            margin-bottom: 15px;
+        }
+        
+        h1 { 
+            font-size:2.5rem; 
+            background: linear-gradient(to right, #00f7ff, #0077ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight:700; 
+            margin-top:10px; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        h2 { 
+            font-size:1.8rem; 
+            color:#00aaff; 
+            font-weight:600; 
+            margin-top:5px; 
+        }
+        
+        .date-badge { 
+            display:inline-block; 
+            background:linear-gradient(90deg, #0077ff, #00f7ff); 
+            padding:10px 20px; 
+            border-radius:25px; 
+            font-size:1rem; 
+            margin-top:15px; 
+            font-weight:500; 
+            box-shadow: 0 0 15px rgba(0, 119, 255, 0.5);
+        }
 
-.particles { position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:-2; }
-.particle { position:absolute; border-radius:50%; background:rgba(0,150,255,0.1); animation:float 20s infinite linear; }
-@keyframes float { 0%{transform:translateY(0) rotate(0deg); opacity:1;} 100%{transform:translateY(-100vh) rotate(720deg); opacity:0;} }
+        /* Welcome Text */
+        .welcome-text { 
+            background:rgba(0, 150, 255, 0.15); 
+            padding:20px; 
+            border-radius:12px; 
+            margin-bottom:25px; 
+            line-height:1.7; 
+            border-left:4px solid #00f7ff; 
+            font-size:1.1rem; 
+            box-shadow:0 5px 15px rgba(0,0,0,0.2); 
+        }
 
-/* Container & Card */
-.container { max-width:700px; margin:30px auto; background:rgba(0,25,50,0.9); border-radius:20px; padding:35px; box-shadow:0 15px 40px rgba(0,0,0,0.5); backdrop-filter:blur(15px); border:1px solid rgba(0,150,255,0.3); position:relative; overflow:hidden; z-index:1; }
-.container::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:radial-gradient(circle, rgba(0,150,255,0.15) 0%, transparent 70%); animation:rotate 40s linear infinite; z-index:-1; }
-@keyframes rotate { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }
+        /* Bonus Cards */
+        .bonus-container { 
+            margin-bottom:30px; 
+        }
+        
+        .bonus-card { 
+            background:linear-gradient(to right, rgba(0, 30, 70, 0.7), rgba(0, 20, 50, 0.7)); 
+            border-radius:12px; 
+            padding:25px; 
+            margin-bottom:20px; 
+            border:1px solid rgba(0, 180, 255, 0.4); 
+            transition:all 0.3s ease; 
+            position:relative; 
+            overflow:hidden; 
+            box-shadow:0 8px 25px rgba(0,0,0,0.3); 
+        }
+        
+        .bonus-card::before { 
+            content:''; 
+            position:absolute; 
+            top:0; 
+            left:-100%; 
+            width:100%; 
+            height:100%; 
+            background:linear-gradient(90deg, transparent, rgba(0, 247, 255, 0.1), transparent); 
+            transition:0.5s; 
+        }
+        
+        .bonus-card:hover { 
+            transform:translateY(-8px); 
+            background:linear-gradient(to right, rgba(0, 40, 90, 0.8), rgba(0, 30, 70, 0.8)); 
+            box-shadow:0 12px 30px rgba(0,0,0,0.4); 
+        }
+        
+        .bonus-card:hover::before { 
+            left:100%; 
+        }
+        
+        .bonus-title { 
+            color:#00f7ff; 
+            font-size:1.5rem; 
+            margin-bottom:15px; 
+            display:flex; 
+            align-items:center; 
+            font-weight:600; 
+        }
+        
+        .bonus-title::before { 
+            content:"★"; 
+            margin-right:12px; 
+            color:#0077ff; 
+            font-size:1.5rem; 
+        }
+        
+        .bonus-details { 
+            margin-left:25px; 
+            margin-bottom:15px; 
+        }
+        
+        .bonus-details li { 
+            margin-bottom:10px; 
+            list-style:none; 
+            display:flex; 
+            align-items:center; 
+            font-size:1.1rem; 
+        }
+        
+        .bonus-details li::before { 
+            content:"➤"; 
+            margin-right:12px; 
+            color:#0077ff; 
+            font-weight:bold; 
+        }
+        
+        .withdraw-condition { 
+            display:flex; 
+            align-items:center; 
+            margin-top:15px; 
+            padding-top:15px; 
+            border-top:1px dashed rgba(0, 247, 255, 0.3); 
+            font-weight:500; 
+            color:#4ade80; 
+        }
+        
+        .withdraw-condition::before { 
+            content:"✓"; 
+            margin-right:12px; 
+            color:#4ade80; 
+            font-weight:bold; 
+        }
 
-/* Header */
-header { text-align:center; margin-bottom:30px; padding-bottom:20px; border-bottom:2px solid #00f; position:relative; }
-.logo { font-size:2.8rem; font-weight:700; color:#00f; letter-spacing:2px; display:inline-block; background:linear-gradient(90deg,#00f,#0ff); -webkit-background-clip:text; color:transparent; text-shadow:0 0 15px rgba(0,255,255,0.5); }
-h1 { font-size:2.5rem; color:#0ff; font-weight:700; margin-top:10px; }
-h2 { font-size:1.8rem; color:#00f; font-weight:500; margin-top:5px; }
-.date-badge { display:inline-block; background:linear-gradient(90deg,#00f,#0ff); padding:10px 20px; border-radius:25px; font-size:1rem; margin-top:15px; font-weight:500; }
+        /* Jackpot Section */
+        .jackpot-section {
+            text-align: center;
+            margin: 25px 0;
+            padding: 15px;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.15), rgba(255, 140, 0, 0.15));
+            border-radius: 12px;
+            border: 1px solid rgba(255, 215, 0, 0.4);
+        }
+        
+        .jackpot-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            margin-bottom: 10px;
+        }
 
-/* Welcome Text */
-.welcome-text { background:rgba(0,150,255,0.1); padding:20px; border-radius:12px; margin-bottom:25px; line-height:1.7; border-left:4px solid #0ff; font-size:1.1rem; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
+        /* Notes & Limited Offer */
+        .note { 
+            text-align:center; 
+            padding:20px; 
+            background:rgba(0, 100, 255, 0.2); 
+            border-radius:12px; 
+            margin:25px 0; 
+            font-size:1rem; 
+            border:1px dashed rgba(0, 180, 255, 0.5); 
+            font-weight:500; 
+        }
+        
+        .limited-offer { 
+            text-align:center; 
+            background:linear-gradient(45deg, #0077ff, #00f7ff); 
+            padding:15px; 
+            border-radius:12px; 
+            margin:25px 0; 
+            font-weight:700; 
+            font-size:1.2rem; 
+            animation:pulse 2s infinite; 
+            box-shadow:0 5px 20px rgba(0, 119, 255, 0.5); 
+        }
+        
+        @keyframes pulse { 
+            0%{transform:scale(1); box-shadow:0 5px 20px rgba(0, 119, 255, 0.5);} 
+            50%{transform:scale(1.03); box-shadow:0 8px 25px rgba(0, 247, 255, 0.7);} 
+            100%{transform:scale(1); box-shadow:0 5px 20px rgba(0, 119, 255, 0.5);} 
+        }
 
-/* Bonus Cards */
-.bonus-container { margin-bottom:30px; }
-.bonus-card { background:linear-gradient(to right, rgba(0,0,80,0.6), rgba(0,0,50,0.6)); border-radius:12px; padding:25px; margin-bottom:20px; border:1px solid rgba(0,150,255,0.3); transition:all 0.3s ease; position:relative; overflow:hidden; box-shadow:0 8px 25px rgba(0,0,0,0.2); }
-.bonus-card::before { content:''; position:absolute; top:0; left:-100%; width:100%; height:100%; background:linear-gradient(90deg, transparent, rgba(0,255,255,0.1), transparent); transition:0.5s; }
-.bonus-card:hover { transform:translateY(-8px); background:linear-gradient(to right, rgba(0,0,100,0.7), rgba(0,0,70,0.7)); box-shadow:0 12px 30px rgba(0,0,0,0.3); }
-.bonus-card:hover::before { left:100%; }
-.bonus-title { color:#0ff; font-size:1.5rem; margin-bottom:15px; display:flex; align-items:center; font-weight:600; }
-.bonus-title::before { content:"★"; margin-right:12px; color:#00f; font-size:1.5rem; }
-.bonus-details { margin-left:25px; margin-bottom:15px; }
-.bonus-details li { margin-bottom:10px; list-style:none; display:flex; align-items:center; font-size:1.1rem; }
-.bonus-details li::before { content:"➤"; margin-right:12px; color:#00f; font-weight:bold; }
-.withdraw-condition { display:flex; align-items:center; margin-top:15px; padding-top:15px; border-top:1px dashed rgba(0,255,255,0.15); font-weight:500; color:#4ade80; }
-.withdraw-condition::before { content:"✓"; margin-right:12px; color:#4ade80; font-weight:bold; }
+        /* Claim Section */
+        .claim-section { 
+            background:rgba(0, 20, 45, 0.9); 
+            border-radius:15px; 
+            padding:25px; 
+            margin:30px 0; 
+            text-align:center; 
+            border:1px solid rgba(0, 180, 255, 0.4); 
+            box-shadow:0 8px 25px rgba(0,0,0,0.4); 
+        }
+        
+        .claim-title { 
+            font-size:1.4rem; 
+            color:#00f7ff; 
+            margin-bottom:20px; 
+            font-weight:600; 
+            line-height: 1.5;
+        }
+        
+        .contact-methods { 
+            display:flex; 
+            justify-content:center; 
+            gap:25px; 
+            margin-top:20px; 
+            flex-wrap:wrap; 
+        }
+        
+        .contact-button { 
+            display:flex; 
+            align-items:center; 
+            gap:10px; 
+            padding:12px 25px; 
+            border-radius:50px; 
+            text-decoration:none; 
+            font-weight:600; 
+            transition:all 0.3s ease; 
+            box-shadow:0 5px 15px rgba(0,0,0,0.3); 
+        }
+        
+        .telegram { 
+            background:linear-gradient(45deg, #0088cc, #00a8ff); 
+            color:white; 
+        }
+        
+        .whatsapp { 
+            background:linear-gradient(45deg, #25d366, #128c7e); 
+            color:white; 
+        }
+        
+        .contact-button:hover { 
+            transform:translateY(-5px) scale(1.05); 
+            box-shadow:0 8px 20px rgba(0,0,0,0.4); 
+        }
 
-/* Notes & Limited Offer */
-.note { text-align:center; padding:20px; background:rgba(0,0,255,0.15); border-radius:12px; margin:25px 0; font-size:1rem; border:1px dashed rgba(0,255,255,0.4); font-weight:500; }
-.limited-offer { text-align:center; background:linear-gradient(45deg,#00f,#0ff); padding:15px; border-radius:12px; margin:25px 0; font-weight:700; font-size:1.2rem; animation:pulse 2s infinite; box-shadow:0 5px 20px rgba(0,0,255,0.4); }
-@keyframes pulse { 0%{transform:scale(1); box-shadow:0 5px 20px rgba(0,0,255,0.4);} 50%{transform:scale(1.03); box-shadow:0 8px 25px rgba(0,255,255,0.6);} 100%{transform:scale(1); box-shadow:0 5px 20px rgba(0,0,255,0.4);} }
+        /* Footer */
+        .footer { 
+            text-align:center; 
+            margin-top:35px; 
+            font-size:0.9rem; 
+            color:rgba(255,255,255,0.7); 
+        }
+        
+        .heart { 
+            color:#0077ff; 
+            display:inline-block; 
+            animation:heartbeat 1.5s infinite; 
+        }
+        
+        @keyframes heartbeat { 
+            0%{transform:scale(1);} 
+            50%{transform:scale(1.2);} 
+            100%{transform:scale(1);} 
+        }
 
-/* Claim Section */
-.claim-section { background:rgba(0,10,40,0.9); border-radius:15px; padding:25px; margin:30px 0; text-align:center; border:1px solid rgba(0,150,255,0.3); box-shadow:0 8px 25px rgba(0,0,0,0.3); }
-.claim-title { font-size:1.4rem; color:#0ff; margin-bottom:20px; font-weight:600; }
-.contact-methods { display:flex; justify-content:center; gap:25px; margin-top:20px; flex-wrap:wrap; }
-.contact-button { display:flex; align-items:center; gap:10px; padding:12px 25px; border-radius:50px; text-decoration:none; font-weight:600; transition:all 0.3s ease; box-shadow:0 5px 15px rgba(0,0,0,0.2); }
-.telegram { background:linear-gradient(45deg,#0088cc,#00a8ff); color:white; }
-.whatsapp { background:linear-gradient(45deg,#25d366,#128c7e); color:white; }
-.contact-button:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.3); }
-
-/* Footer */
-.footer { text-align:center; margin-top:35px; font-size:0.9rem; color:rgba(255,255,255,0.7); }
-.heart { color:#00f; display:inline-block; animation:heartbeat 1.5s infinite; }
-@keyframes heartbeat { 0%{transform:scale(1);} 50%{transform:scale(1.2);} 100%{transform:scale(1);} }
-
-/* Media Queries */
-@media (max-width:600px) {
-.container { padding:20px; }
-h1 { font-size:2rem; }
-h2 { font-size:1.5rem; }
-.bonus-title { font-size:1.3rem; }
-.contact-methods { flex-direction:column; align-items:center; }
-.contact-button { width:100%; justify-content:center; }
-}
-</style>
+        /* Media Queries */
+        @media (max-width:600px) {
+            .container { padding:20px; }
+            .logo { font-size: 2.2rem; }
+            h1 { font-size:1.8rem; }
+            h2 { font-size:1.4rem; }
+            .bonus-title { font-size:1.3rem; }
+            .contact-methods { flex-direction:column; align-items:center; }
+            .contact-button { width:100%; justify-content:center; }
+        }
+    </style>
 </head>
 <body>
 
 <!-- Lightning Background -->
 <div class="lightning-container">
-  <div class="lightning lightning-1"></div>
-  <div class="lightning lightning-2"></div>
-  <div class="lightning lightning-3"></div>
+    <div class="lightning lightning-1"></div>
+    <div class="lightning lightning-2"></div>
+    <div class="lightning lightning-3"></div>
 </div>
 
 <!-- Particles -->
@@ -104,89 +424,107 @@ h2 { font-size:1.5rem; }
 
 <!-- Main Container -->
 <div class="container">
-  <header>
-    <div class="logo">UBETCLUB</div>
-    <h1>SPECIAL BONUS REACTIVE VIP</h1>
-    <h2>AUGUST 2025</h2>
-    <div class="date-badge">Promosi hingga 27/08/2025</div>
-  </header>
+    <header>
+        <div class="logo">UBETCLUB</div>
+        <h1>SPECIAL BONUS REACTIVE VIP</h1>
+        <h2>AUGUST 2025</h2>
+        <div class="date-badge">Promosi hingga 27/08/2025</div>
+    </header>
 
-  <div class="welcome-text">
-    Terima kasih boss banyak sokong company kami selama ini. Nikmati Special Offer Welcome Back Bonus VIP ~ Aug25 🎉
-  </div>
-
-  <div class="bonus-container">
-    <div class="bonus-card">
-      <div class="bonus-title">A - Welcome Bonus 50%</div>
-      <ul class="bonus-details">
-        <li>MIN DEPOSIT RM30 DAPAT FREE RM15 = 45</li>
-      </ul>
-      <div class="withdraw-condition">Withdraw: Bonus ditolak semasa cuci</div>
+    <div class="welcome-text">
+        Terima kasih boss banyak sokong company kami selama ini. Nikmati Special Offer Welcome Back Bonus VIP ~ Aug25 🎉
     </div>
-    <div class="bonus-card">
-      <div class="bonus-title">B - Welcome Bonus 80%</div>
-      <ul class="bonus-details">
-        <li>MIN DEPOSIT RM100 DAPAT FREE RN80 = 180</li>
-      </ul>
-      <div class="withdraw-condition">Withdraw: x4 Winover</div>
+
+    <div class="bonus-container">
+        <div class="bonus-card">
+            <div class="bonus-title">Welcome Bonus 50%</div>
+            <ul class="bonus-details">
+                <li>Min 30 dapat 15Bvs = 45</li>
+            </ul>
+            <div class="withdraw-condition">Withdraw: Bonus ditolak semasa cuci</div>
+        </div>
+        
+        <div class="jackpot-section">
+            <div class="jackpot-title">JACKPOT</div>
+        </div>
+        
+        <div class="bonus-card">
+            <div class="bonus-title">Welcome Bonus 80%</div>
+            <ul class="bonus-details">
+                <li>Min 100 dapat 80Bvs = 180</li>
+            </ul>
+            <div class="withdraw-condition">Withdraw: x4 Winover</div>
+        </div>
+        
+        <div class="bonus-card">
+            <div class="bonus-title">Welcome Bonus 100%</div>
+            <ul class="bonus-details">
+                <li>Min 200 dapat 200Bvs = 400</li>
+            </ul>
+            <div class="withdraw-condition">Withdraw: x7 Winover</div>
+        </div>
     </div>
-    <div class="bonus-card">
-      <div class="bonus-title">Welcome Bonus 100%</div>
-      <ul class="bonus-details">
-        <li>MIN DEPOSIT RM200 DAPAT RM200 = 400</li>
-      </ul>
-      <div class="withdraw-condition">Withdraw: x7 Winover</div>
+
+    <div class="note">
+        Hanya satu Offer sahaja yang boleh ditebus ya.
     </div>
-  </div>
 
-  <div class="note">
-    Hanya satu Offer sahaja yang boleh ditebus ya.
-  </div>
-
-  <div class="limited-offer">
-    ⏰ Tempat terhad, hanya 30 tawaran sahaja dibuka!
-  </div>
-
-  <div class="claim-section">
-    <div class="claim-title">NAK CLAIM? TANGKAP GAMBAR INI & BAGI KAT CASHIER BAWAH INI</div>
-    <div class="contact-methods">
-      <a href="https://t.me/ubetclub" class="contact-button telegram">
-        <i class="fab fa-telegram"></i> Telegram: t.me/ubetclub
-      </a>
-      <a href="https://wa.me/qr/VL5N555IJ3BHB1" class="contact-button whatsapp">
-        <i class="fab fa-whatsapp"></i> WhatsApp: Hubungi Kami
-      </a>
+    <div class="limited-offer">
+        ⏰ Tempat terhad, hanya 30 tawaran sahaja dibuka!
     </div>
-  </div>
 
-  <div class="footer">
-    UBETCLUB SPECIAL EVENT
-  </div>
+    <div class="claim-section">
+        <div class="claim-title">NAK CLAIM? TANGKAP GAMBAR INI & BAGI KAT CASHIER BAWAH INI</div>
+        <div class="contact-methods">
+            <a href="#" onclick="sendTelegramMessage(); return false;" class="contact-button telegram">
+                <i class="fab fa-telegram"></i> Telegram: t.me/ubetclub
+            </a>
+            <a href="#" onclick="sendWhatsAppMessage(); return false;" class="contact-button whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp: Hubungi Kami
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        UBETCLUB SPECIAL EVENT | <span class="heart">❤️</span>
+    </div>
 </div>
 
 <script>
-// Particles Background
-document.addEventListener('DOMContentLoaded', function() {
-  const particlesContainer = document.getElementById('particles');
-  const numberOfParticles = 60;
+    // Particles Background
+    document.addEventListener('DOMContentLoaded', function() {
+        const particlesContainer = document.getElementById('particles');
+        const numberOfParticles = 60;
 
-  for(let i=0;i<numberOfParticles;i++){
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
-    const size=Math.random()*6+2;
-    const posX=Math.random()*100;
-    const posY=Math.random()*100;
-    const delay=Math.random()*20;
-    const duration=Math.random()*25+15;
-    particle.style.width=`${size}px`;
-    particle.style.height=`${size}px`;
-    particle.style.left=`${posX}vw`;
-    particle.style.top=`${posY}vh`;
-    particle.style.animationDelay=`${delay}s`;
-    particle.style.animationDuration=`${duration}s`;
-    particlesContainer.appendChild(particle);
-  }
-});
+        for(let i=0;i<numberOfParticles;i++){
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            const size=Math.random()*6+2;
+            const posX=Math.random()*100;
+            const posY=Math.random()*100;
+            const delay=Math.random()*20;
+            const duration=Math.random()*25+15;
+            particle.style.width=`${size}px`;
+            particle.style.height=`${size}px`;
+            particle.style.left=`${posX}vw`;
+            particle.style.top=`${posY}vh`;
+            particle.style.animationDelay=`${delay}s`;
+            particle.style.animationDuration=`${duration}s`;
+            particlesContainer.appendChild(particle);
+        }
+    });
+
+    // Function to send Telegram message
+    function sendTelegramMessage() {
+        const message = encodeURIComponent("REACTIVE Member https://tinyurl.com/UBETCLUB");
+        window.open(`https://t.me/ubetclub?start=${message}`, '_blank');
+    }
+
+    // Function to send WhatsApp message
+    function sendWhatsAppMessage() {
+        const message = encodeURIComponent("REACTIVE Member https://tinyurl.com/UBETCLUB");
+        window.open(`https://wa.me/?text=${message}`, '_blank');
+    }
 </script>
 
 </body>
