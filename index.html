@@ -4,167 +4,375 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Special Bonus VIP - Agustus 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #0c0c1a 0%, #0d1b2a 100%);
             color: #fff;
             padding: 20px;
             min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Background effects with lightning */
+        .lightning-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .lightning {
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #fff, transparent);
+            opacity: 0;
+            filter: blur(1px);
+        }
+        
+        .lightning-1 {
+            left: 20%;
+            animation: lightning-flash 8s infinite;
+        }
+        
+        .lightning-2 {
+            left: 50%;
+            animation: lightning-flash 12s infinite 2s;
+        }
+        
+        .lightning-3 {
+            left: 80%;
+            animation: lightning-flash 10s infinite 4s;
+        }
+        
+        @keyframes lightning-flash {
+            0%, 95%, 100% { opacity: 0; height: 0; }
+            5%, 10% { opacity: 0.5; height: 100%; }
+            15%, 90% { opacity: 0; height: 100%; }
+        }
+        
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
         }
         
         .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(30, 30, 46, 0.8);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            max-width: 650px;
+            margin: 20px auto;
+            background: rgba(15, 15, 35, 0.85);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(233, 69, 96, 0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         header {
             text-align: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
             border-bottom: 2px solid #e94560;
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #f9b17a;
+            text-shadow: 0 0 15px rgba(249, 177, 122, 0.7);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            color: #e94560;
+        }
+        
+        .logo::before, .logo::after {
+            content: '✦';
+            font-size: 1.8rem;
+            color: #e94560;
+            animation: spin 5s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         h1 {
-            font-size: 2.2rem;
-            color: #e94560;
-            margin-bottom: 5px;
+            font-size: 2.5rem;
+            background: linear-gradient(to right, #e94560, #f9b17a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(233, 69, 96, 0.3);
         }
         
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #f9b17a;
             margin-bottom: 15px;
+            font-weight: 600;
         }
         
         .date-badge {
             display: inline-block;
-            background: #e94560;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-top: 10px;
+            background: linear-gradient(to right, #e94560, #c22554);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin-top: 15px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
         }
         
         .welcome-text {
-            background: rgba(249, 177, 122, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            line-height: 1.6;
+            background: rgba(249, 177, 122, 0.15);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            line-height: 1.7;
             border-left: 4px solid #f9b17a;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .bonus-container {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
         
         .bonus-card {
-            background: linear-gradient(to right, rgba(57, 57, 91, 0.5), rgba(37, 37, 59, 0.5));
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease;
+            background: linear-gradient(to right, rgba(57, 57, 91, 0.6), rgba(37, 37, 59, 0.6));
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .bonus-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: 0.5s;
         }
         
         .bonus-card:hover {
-            transform: translateY(-5px);
-            background: linear-gradient(to right, rgba(73, 73, 109, 0.6), rgba(47, 47, 71, 0.6));
+            transform: translateY(-8px);
+            background: linear-gradient(to right, rgba(73, 73, 109, 0.7), rgba(47, 47, 71, 0.7));
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .bonus-card:hover::before {
+            left: 100%;
         }
         
         .bonus-title {
             color: #f9b17a;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
+            font-weight: 600;
         }
         
         .bonus-title::before {
-            content: "•";
-            margin-right: 10px;
+            content: "★";
+            margin-right: 12px;
             color: #e94560;
             font-size: 1.5rem;
         }
         
         .bonus-details {
-            margin-left: 20px;
-            margin-bottom: 10px;
+            margin-left: 25px;
+            margin-bottom: 15px;
         }
         
         .bonus-details li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             list-style-type: none;
             display: flex;
             align-items: center;
+            font-size: 1.1rem;
         }
         
         .bonus-details li::before {
-            content: "*";
-            margin-right: 10px;
+            content: "➤";
+            margin-right: 12px;
             color: #e94560;
+            font-weight: bold;
         }
         
         .withdraw-condition {
             display: flex;
             align-items: center;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.15);
+            font-weight: 500;
+            color: #4ade80;
         }
         
         .withdraw-condition::before {
             content: "✓";
-            margin-right: 10px;
+            margin-right: 12px;
             color: #4ade80;
+            font-weight: bold;
         }
         
         .note {
             text-align: center;
-            padding: 15px;
-            background: rgba(233, 69, 96, 0.1);
-            border-radius: 10px;
-            margin: 20px 0;
-            font-size: 0.9rem;
-            border: 1px dashed rgba(233, 69, 96, 0.3);
+            padding: 20px;
+            background: rgba(233, 69, 96, 0.15);
+            border-radius: 12px;
+            margin: 25px 0;
+            font-size: 1rem;
+            border: 1px dashed rgba(233, 69, 96, 0.4);
+            font-weight: 500;
         }
         
         .limited-offer {
             text-align: center;
             background: linear-gradient(45deg, #e94560, #f9b17a);
-            padding: 10px;
-            border-radius: 10px;
-            margin: 20px 0;
-            font-weight: bold;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 25px 0;
+            font-weight: 700;
+            font-size: 1.2rem;
             animation: pulse 2s infinite;
+            box-shadow: 0 5px 20px rgba(233, 69, 96, 0.4);
         }
         
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
+            0% { transform: scale(1); box-shadow: 0 5px 20px rgba(233, 69, 96, 0.4); }
+            50% { transform: scale(1.03); box-shadow: 0 8px 25px rgba(233, 69, 96, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 5px 20px rgba(233, 69, 96, 0.4); }
+        }
+        
+        .claim-section {
+            background: rgba(15, 15, 35, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+            border: 1px solid rgba(249, 177, 122, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .claim-title {
+            font-size: 1.4rem;
+            color: #f9b17a;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .telegram {
+            background: linear-gradient(45deg, #0088cc, #00a8ff);
+            color: white;
+        }
+        
+        .whatsapp {
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            color: white;
+        }
+        
+        .contact-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
         .footer {
             text-align: center;
-            margin-top: 30px;
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.6);
+            margin-top: 35px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
         }
         
         .heart {
@@ -175,32 +383,55 @@
         
         @keyframes heartbeat {
             0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            50% { transform: scale(1.2); }
             100% { transform: scale(1); }
         }
         
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
             .container {
-                padding: 15px;
+                padding: 20px;
+            }
+            
+            .logo {
+                font-size: 2rem;
             }
             
             h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             h2 {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
             
             .bonus-title {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
+            }
+            
+            .contact-methods {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-button {
+                width: 100%;
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
+    <div class="lightning-container">
+        <div class="lightning lightning-1"></div>
+        <div class="lightning lightning-2"></div>
+        <div class="lightning lightning-3"></div>
+    </div>
+    
+    <div class="particles" id="particles"></div>
+    
     <div class="container">
         <header>
+            <div class="logo">U<span>BET</span>CLUB</div>
             <h1>Special Bonus VIP</h1>
             <h2>AUGUST 2025</h2>
             <div class="date-badge">Promosi hingga 27/08/2025</div>
@@ -244,9 +475,53 @@
             ⏰ Tempat terhad, hanya 30 tawaran sahaja dibuka!
         </div>
         
+        <div class="claim-section">
+            <div class="claim-title">NAK CLAIM ? SILA TANGKAP GAMBAR INI LEPASTU BAGI KAT CASHIER BAWAH BOSS ❤️</div>
+            
+            <div class="contact-methods">
+                <a href="https://t.me/ubetclub" class="contact-button telegram">
+                    <i class="fab fa-telegram"></i>
+                    Telegram: t.me/ubetclub
+                </a>
+                
+                <a href="https://wa.me/qr/VL5N555IJ3BHB1" class="contact-button whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp: Hubungi Kami
+                </a>
+            </div>
+        </div>
+        
         <div class="footer">
             Special untuk boss amoi ❤️ | <span class="heart">❤️</span>
         </div>
     </div>
+
+    <script>
+        // Create background particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const numberOfParticles = 50;
+            
+            for (let i = 0; i < numberOfParticles; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                const size = Math.random() * 5 + 2;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 20 + 15;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}vw`;
+                particle.style.top = `${posY}vh`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
 </body>
 </html>
